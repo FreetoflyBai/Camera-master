@@ -1,0 +1,16 @@
+<resources >
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="cropImageStyle">@style/Widget.CropImageView</item>
+    </style>
+
+    <style name="Widget.CropImageView" parent="android:Widget">
+        <item name="showThirds">true</item>
+        <item name="showCircle">false</item>
+        <item name="showHandles">always</item>
+        <item name="highlightColor">#f3f3f3</item>
+    </style>
+
+</resources>
