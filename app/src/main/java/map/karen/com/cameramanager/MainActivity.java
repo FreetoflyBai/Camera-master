@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private File mAlbumFile;
     private boolean isCamera=true;
 
-
     private static int CAMERA_REQUEST_CODE = 1;
     private static int GALLERY_REQUEST_CODE = 2;
     private static int CROP_REQUEST_CODE = 3;
@@ -170,17 +169,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     private void startImageZoom(boolean isCamera,Uri source,Uri destination) {
-        this.isCamera=isCamera;
-        Intent intent = new Intent(this,CropImageActivity.class);
-        intent.setDataAndType(source, "image/*");
-        intent.putExtra("crop", "true");
-        intent.putExtra("aspectX", 1);
-        intent.putExtra("aspectY", 1);
-        intent.putExtra("outputX", 500);
-        intent.putExtra("outputY", 500);
-        intent.putExtra("return-data", true);
-        intent.putExtra(MediaStore.EXTRA_OUTPUT,destination);
-        startActivityForResult(intent, CROP_REQUEST_CODE);
+        try {
+            this.isCamera=isCamera;
+            Intent intent = new Intent(this,CropImageActivity.class);
+            intent.setDataAndType(source, "image/*");
+            intent.putExtra("crop", "true");
+            intent.putExtra("aspectX", 1);
+            intent.putExtra("aspectY", 1);
+            intent.putExtra("outputX", 500);
+            intent.putExtra("outputY", 500);
+            intent.putExtra("return-data", true);
+            intent.putExtra(MediaStore.EXTRA_OUTPUT,destination);
+            startActivityForResult(intent, CROP_REQUEST_CODE);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 
