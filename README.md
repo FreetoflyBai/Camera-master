@@ -1,4 +1,4 @@
-# PictureCrop
+# ImageCrop
 
 This is a library ,include picture crop ,scale，pixel compress，mass compress
 
